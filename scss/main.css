@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  background: #F3F5FC;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .wrap {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-width: 1360px;
+  margin: 2.5rem 0;
+  padding: 0 clamp(1.5rem, 5vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+@media (min-width: 90rem) {
+  .container .wrap {
+    flex-direction: row;
+  }
+}
+.container .wrap .overview {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  justify-items: center;
+  gap: 2rem;
+}
+.container .wrap .overview .form {
+  width: 100%;
+  max-width: 42.5rem;
+  padding: 0 0 2rem;
+}
+.container .wrap .overview .form__input textarea {
+  width: 100%;
+  min-height: clamp(20rem, 40vw, 30rem);
+  margin-bottom: 1.5rem;
+  padding-right: 1rem;
+  background: transparent;
+  color: hsl(213, 84%, 24%);
+  border: none;
+  resize: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  line-height: 3rem;
+  transition: 0.3s;
+}
+.container .wrap .overview .form__input textarea::-moz-placeholder {
+  color: hsl(213, 84%, 24%);
+}
+.container .wrap .overview .form__input textarea::placeholder {
+  color: hsl(213, 84%, 24%);
+}
+.container .wrap .overview .form__input span {
+  margin: 1rem 0;
+  color: hsl(210, 9%, 31%);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.container .wrap .overview .form__buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 1.5rem;
+}
+.container .wrap .overview .form__buttons input[type=submit] {
+  width: 100%;
+  padding: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  border-radius: 1.5rem;
+}
+.container .wrap .overview .form__buttons input[type=submit]:hover {
+  background: hsl(216, 87%, 20%);
+}
+.container .wrap .overview .form__buttons input[name=encrypt] {
+  background: hsl(213, 84%, 24%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+}
+.container .wrap .overview .form__buttons input[name=decrypt] {
+  background: none;
+  color: hsl(213, 84%, 24%);
+  border: 1px solid hsl(213, 84%, 24%);
+}
+.container .wrap .overview .form__buttons input[name=decrypt]:hover {
+  background: hsl(228, 52%, 94%);
+}
+@media (min-width: 33rem) {
+  .container .wrap .overview .form__buttons {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+@media (min-width: 64rem) {
+  .container .wrap .overview .form {
+    margin-top: 3.5rem;
+    flex-direction: row;
+  }
+}
+@media (min-width: 90rem) {
+  .container .wrap .overview .form {
+    margin-top: 8rem;
+  }
+}
+.container .wrap .overview .output {
+  background: hsl(0, 0%, 100%);
+  width: 100%;
+  max-width: 42.5rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.container .wrap .overview .output__message {
+  max-height: 40rem;
+}
+.container .wrap .overview .output__message p {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+.container .wrap .overview .output__message .error {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.container .wrap .overview .output__message .error img {
+  display: none;
+}
+@media (min-width: 64rem) {
+  .container .wrap .overview .output__message .error img {
+    display: block;
+  }
+}
+.container .wrap .overview .output__message .error__text {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+.container .wrap .overview .output__message .error__text h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 29px;
+}
+.container .wrap .overview .output__message .error__text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.container .wrap .overview .output button {
+  width: 100%;
+  padding: 1.5rem;
+  background: none;
+  color: hsl(213, 84%, 24%);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  border-radius: 1.5rem;
+  border: 1px solid hsl(213, 84%, 24%);
+}
+.container .wrap .overview .output button:hover {
+  background: hsl(227, 60%, 97%);
+}
+@media (min-width: 64rem) {
+  .container .wrap .overview .output {
+    max-width: 25rem;
+  }
+}
+@media (min-width: 64rem) {
+  .container .wrap .overview {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}/*# sourceMappingURL=main.css.map */

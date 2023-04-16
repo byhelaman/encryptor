@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+$white: hsl(0, 0%, 100%);
+
+$light-blue-100: hsl(227, 60%, 97%);
+$light-blue-300: hsl(228, 52%, 94%);
+
+$dark-blue-300: hsl(213, 84%, 24%);
+$dark-blue-400: hsl(216, 87%, 20%);
+
+$gray-100: hsl(210, 14%, 83%);
+$dark-gray-400: hsl(210, 9%, 31%);
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  background: #F3F5FC;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .wrap {
+    width: 100%;
+    height: fit-content;
+    max-width: 1360px;
+
+    margin: 2.5rem 0;
+    padding: 0 clamp(1.5rem, 5vw, 2.5rem);
+
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    @media (min-width: 90rem) {
+      flex-direction: row;
+    }
+
+    & .overview {
+      width: 100%;
+      // margin: 3.5rem 0;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+      // flex-direction: column;
+      justify-items: center;
+      gap: 2rem;
+
+      & .form {
+        width: 100%;
+        max-width: 42.5rem;
+        padding: 0 0 2rem;
+
+        &__input {
+          & textarea {
+            width: 100%;
+            min-height: clamp(20rem, 40vw, 30rem);
+
+            margin-bottom: 1.5rem;
+            padding-right: 1rem;
+
+            background: transparent;
+            color: $dark-blue-300;
+
+            border: none;
+            resize: none;
+            outline: none;
+
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            line-height: 3rem;
+
+            transition: 0.3s;
+
+            &::placeholder {
+              color: $dark-blue-300;
+            }
+
+          }
+
+          & span {
+            margin: 1rem 0;
+
+            color: $dark-gray-400;
+
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: 0.5rem;
+          }
+        }
+
+        &__buttons {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+          gap: 1.5rem;
+
+          & input[type="submit"] {
+            width: 100%;
+            padding: 1.5rem;
+
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            border-radius: 1.5rem;
+
+            &:hover {
+              background: $dark-blue-400;
+            }
+          }
+
+          & input[name="encrypt"] {
+            background: $dark-blue-300;
+            color: $white;
+            border: none;
+          }
+
+          & input[name="decrypt"] {
+            background: none;
+            color: $dark-blue-300;
+
+            border: 1px solid $dark-blue-300;
+
+            &:hover {
+              background: $light-blue-300;
+            }
+          }
+
+          @media (min-width:33rem) {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          }
+        }
+
+
+        @media (min-width: 64rem) {
+          margin-top: 3.5rem;
+          flex-direction: row;
+        }
+
+        @media (min-width: 90rem) {
+          margin-top: 8rem;
+        }
+      }
+
+      & .output {
+        background: $white;
+
+        width: 100%;
+        max-width: 42.5rem;
+
+        padding: 2rem;
+
+        border-radius: 2rem;
+        box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        gap: 2rem;
+
+        &__message {
+          max-height: 40rem;
+
+          & p {
+            margin: 0;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+          }
+
+          & .error {
+            text-align: center;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            gap: 2rem;
+
+            & img {
+              display: none;
+
+              @media (min-width: 64rem) {
+                display: block;
+              }
+            }
+
+            &__text {
+
+              & h1 {
+                margin: 0;
+                font-size: 1.5rem;
+                line-height: 29px;
+              }
+
+              & p {
+                margin: 0;
+                font-size: 1rem;
+                line-height: 1.5rem;
+              }
+
+              display: flex;
+              flex-flow: column nowrap;
+              gap: 1rem;
+            }
+          }
+        }
+
+        & button {
+          width: 100%;
+          padding: 1.5rem;
+
+          background: none;
+          color: $dark-blue-300;
+
+          font-family: 'Inter', sans-serif;
+          font-size: 1rem;
+
+          border-radius: 1.5rem;
+          border: 1px solid $dark-blue-300;
+
+          &:hover {
+            background: $light-blue-100;
+          }
+        }
+
+        @media (min-width:64rem) {
+          max-width: 25rem;
+        }
+      }
+
+      @media (min-width:64rem) {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      }
+    }
+  }
+}

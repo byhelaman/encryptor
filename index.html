@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/alura-logo.ico">
+  <script src="https://kit.fontawesome.com/580adcc296.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./scss/main.css">
+  <title>Text Encryptor</title>
+</head>
+
+<body>
+  <main class="container">
+    <div class="wrap">
+      <header class="header">
+        <img src="./images/alura-logo.png" alt="Alura logo">
+      </header>
+      <section class="overview">
+        <form id="form" class="form">
+          <div class="form__input">
+            <textarea name="textarea" id="textarea" placeholder="Enter the text here"></textarea>
+            <span><i class="fa-solid fa-circle-exclamation"></i> Only lowercase letters and no accents</span>
+          </div>
+          <div class="form__buttons">
+            <input type="submit" name="encrypt" value="Encrypt" id="encrypt">
+            <input type="submit" name="decrypt" value="Decrypt" id="decrypt">
+          </div>
+        </form>
+        <div class="output" id="output">
+          <div id="output-message" class="output__message"></div>
+          <button id="copy">Copy</button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="./index.js"></script>
+</body>
+
+</html>
