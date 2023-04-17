@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/alura-logo.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.ico">
   <script src="https://kit.fontawesome.com/580adcc296.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./scss/main.css">
   <title>Text Encryptor</title>
@@ -20,7 +20,7 @@
       <section class="overview">
         <form id="form" class="form">
           <div class="form__input">
-            <textarea name="textarea" id="textarea" placeholder="Enter the text here"></textarea>
+            <textarea name="textarea-input" id="textarea-input" placeholder="Enter the text here" autofocus></textarea>
             <span><i class="fa-solid fa-circle-exclamation"></i> Only lowercase letters and no accents</span>
           </div>
           <div class="form__buttons">
@@ -29,6 +29,7 @@
           </div>
         </form>
         <div class="output" id="output">
+          <textarea name="textarea-output" id="textarea-output" disabled></textarea>
           <div id="output-message" class="output__message"></div>
           <button id="copy">Copy</button>
         </div>

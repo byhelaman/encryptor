@@ -28,8 +28,14 @@ body {
   flex-direction: column;
   gap: 5rem;
 }
+@media (min-width: 64rem) {
+  .container .wrap {
+    gap: 3rem;
+  }
+}
 @media (min-width: 90rem) {
   .container .wrap {
+    gap: 5rem;
     flex-direction: row;
   }
 }
@@ -47,8 +53,6 @@ body {
 }
 .container .wrap .overview .form__input textarea {
   width: 100%;
-  min-height: clamp(20rem, 40vw, 30rem);
-  margin-bottom: 1.5rem;
   padding-right: 1rem;
   background: transparent;
   color: hsl(213, 84%, 24%);
@@ -56,9 +60,11 @@ body {
   resize: none;
   outline: none;
   font-family: "Inter", sans-serif;
+  transition: 0.3s;
+  min-height: clamp(20rem, 40vw, 30rem);
+  margin-bottom: 1.5rem;
   font-size: 2rem;
   line-height: 3rem;
-  transition: 0.3s;
 }
 .container .wrap .overview .form__input textarea::-moz-placeholder {
   color: hsl(213, 84%, 24%);
@@ -129,6 +135,22 @@ body {
   flex-flow: column nowrap;
   justify-content: center;
   gap: 2rem;
+}
+.container .wrap .overview .output textarea {
+  width: 100%;
+  padding-right: 1rem;
+  background: transparent;
+  color: hsl(213, 84%, 24%);
+  border: none;
+  resize: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  transition: 0.3s;
+  height: 100%;
+  min-height: 10rem;
+  max-height: 40rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .container .wrap .overview .output__message {
   max-height: 40rem;

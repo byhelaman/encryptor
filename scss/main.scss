@@ -11,6 +11,22 @@ $dark-blue-400: hsl(216, 87%, 20%);
 $gray-100: hsl(210, 14%, 83%);
 $dark-gray-400: hsl(210, 9%, 31%);
 
+@mixin textarea() {
+  width: 100%;
+  padding-right: 1rem;
+
+  background: transparent;
+  color: $dark-blue-300;
+
+  border: none;
+  resize: none;
+  outline: none;
+
+  font-family: 'Inter', sans-serif;
+
+  transition: 0.3s;
+}
+
 
 *,
 *::before,
@@ -43,7 +59,12 @@ body {
     flex-direction: column;
     gap: 5rem;
 
+    @media (min-width: 64rem) {
+      gap: 3rem;
+    }
+
     @media (min-width: 90rem) {
+      gap: 5rem;
       flex-direction: row;
     }
 
@@ -64,24 +85,13 @@ body {
 
         &__input {
           & textarea {
-            width: 100%;
+            @include textarea();
+
             min-height: clamp(20rem, 40vw, 30rem);
-
             margin-bottom: 1.5rem;
-            padding-right: 1rem;
 
-            background: transparent;
-            color: $dark-blue-300;
-
-            border: none;
-            resize: none;
-            outline: none;
-
-            font-family: 'Inter', sans-serif;
             font-size: 2rem;
             line-height: 3rem;
-
-            transition: 0.3s;
 
             &::placeholder {
               color: $dark-blue-300;
@@ -167,6 +177,16 @@ body {
         flex-flow: column nowrap;
         justify-content: center;
         gap: 2rem;
+
+        & textarea {
+          @include textarea();
+          height: 100%;
+          min-height: 10rem;
+          max-height: 40rem;
+
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
 
         &__message {
           max-height: 40rem;
