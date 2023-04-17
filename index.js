@@ -1,11 +1,11 @@
 // input
 const form = document.getElementById('form');
 const textareaInput = document.getElementById('textarea-input');
-const textareaOutput = document.getElementById('textarea-output');
 
 // output
 const output = document.getElementById('output');
 const outputMessage = document.getElementById('output-message');
+const textareaOutput = document.getElementById('textarea-output');
 const copyButton = document.getElementById('copy');
 
 // buttons
@@ -104,7 +104,7 @@ function validateTextarea() {
 
 // function that copies the encrypted/decrypted message (clipboard - new message) 
 copyButton.addEventListener('click', () => {
-  navigator.clipboard.writeText(outputMessage.textContent);
+  navigator.clipboard.writeText(textareaOutput.value);
   textareaInput.value = textareaOutput.value;
 });
 
